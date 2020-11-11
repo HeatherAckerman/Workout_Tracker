@@ -18,7 +18,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:3000/", {
 });
 
 //Create routes
-app.use(require("./routes/api"));
+app.use(require("./routes/apiRoutes"));
 app.use(require("./routes/htmlRoutes"));
 
 //Have server listen
