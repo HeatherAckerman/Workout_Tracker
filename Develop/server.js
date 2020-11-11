@@ -12,8 +12,13 @@ app.use(express.json());
 app.use(express.static("public"));
 
 //Use mongoose
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:3000/", {
+  useNewUrlParser: true,
+  useFindAndModify: false
+});
 
 //Create routes
+app.use(require("./routes/api"));
 
 //Have server listen
 app.listen(PORT, () => {
