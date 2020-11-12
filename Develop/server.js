@@ -14,7 +14,9 @@ app.use(express.static("public"));
 //Use mongoose
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workoutSchema", {
   useNewUrlParser: true,
-  useFindAndModify: false
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
 });
 
 let path = require("path");
